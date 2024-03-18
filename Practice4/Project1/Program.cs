@@ -1,5 +1,19 @@
-﻿decimal myDecimal = 3.14m;
-Console.WriteLine($"decimal: {myDecimal}");
+﻿string[] values = { "12.3", "45", "ABC", "11", "DEF" };
+float sum = 0;
+string message = "";
 
-int myInt = (int)myDecimal;
-Console.WriteLine($"int: {myInt}");
+foreach (string value in values)
+{
+    float result = 0; 
+    if (float.TryParse(value, out result))
+    {
+        sum += result;
+    }
+    else
+    {
+        message += value;
+    }
+}
+
+Console.WriteLine($"Message: {message}");
+Console.WriteLine($"Total: {sum}");
